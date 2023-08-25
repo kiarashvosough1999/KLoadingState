@@ -6,7 +6,9 @@
 [![Twitter](https://img.shields.io/badge/Twitter-@Vosough_k-blue.svg?style=flat-square)](https://twitter.com/vosough_k)
 [![Linkedin](https://img.shields.io/badge/Linkedin-KiarashVosough-blue.svg?style=flat-square)](https://www.linkedin.com/in/kiarashvosough/)
 
-Simple Loading State for SwiftUI.
+Simple Loading State Managment for SwiftUI.
+
+This was a repetitive code of my projects, so I created a package to reuse it more easily.
 
 - [Features](#features)
 - [Requirements](#requirements)
@@ -17,8 +19,9 @@ Simple Loading State for SwiftUI.
 
 ## Features
 
-- [x] Simplfy Loading Async DataSources.
-- [x] Retry View And Recovery On Failure State.
+- [x] Simplfy Transition Between States Of Loading Async DataSource's States.
+- [x] Retry View And Recovery Button On Failure State.
+- [x] Custome Message On Failure.
 
 ## Requirements
 
@@ -63,7 +66,7 @@ final class ViewModel: ObservableObject {
 }
 ```
 
-But you can also delcare it on view using `@State`.
+But you can also delcare it on view's structure using `@State`.
 
 ```swift
 final struct MyView: View {
@@ -71,19 +74,20 @@ final struct MyView: View {
 }
 ```
 
-To use the state, you must wrap your view inside `WithLoadingState` View. This view handle state 2 to 4, and requires you pass the view to be rendered when the state changes to `.loaded`.
+To use the state, you must wrap your view inside `WithLoadingState` View. This view handles state 1 to 4, and requires you pass the view to be rendered when the state changes to `.loaded`.
 
 As soon as the state changes to `.loaded`, the closure with view you provided will be rendered with respective datasource passed via `.loaded(..)`.
 
-> you can use `onRetry` modifier to receive, notification, if user clicked on retry button appeared on screen the state,when th state has been changed to `.failedToLoad`, in order to take some action to recover.
+> you can use `onRetry` modifier to receive callback, if user clicked on retry button when loading's state transit to '.failedToLoad', in order to take some action to retry.
 
 ```swift
     var body: some View {
         WithLoadingState(state: _state) { dataSource in
-            ....
+            Some Views....
         }
         .onRetry {
-            some loading task...
+            // Support Async Functions Invocation
+            Some Loading Task...
         }
     }
 ```
@@ -94,4 +98,4 @@ Feel free to share your ideas or any other problems. Pull requests are welcomed.
 
 ## License
 
-`Mockia` is released under an MIT license. See [LICENSE](https://github.com/kiarashvosough1999/KLoadingState/blob/master/LICENSE) for more information.
+`KLoadingState ` is released under an MIT license. See [LICENSE](https://github.com/kiarashvosough1999/KLoadingState/blob/master/LICENSE) for more information.
