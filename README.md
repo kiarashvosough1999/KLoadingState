@@ -5,6 +5,7 @@
 ![SPM](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 [![Twitter](https://img.shields.io/badge/Twitter-@Vosough_k-blue.svg?style=flat-square)](https://twitter.com/vosough_k)
 [![Linkedin](https://img.shields.io/badge/Linkedin-KiarashVosough-blue.svg?style=flat-square)](https://www.linkedin.com/in/kiarashvosough/)
+![example workflow](https://github.com/kiarashvosough1999/KLoadingState/actions/workflows/iOS.yml/badge.svg)
 
 Simple Loading State Managment for SwiftUI.
 
@@ -13,8 +14,8 @@ This was a repetitive code of my projects, so I created a package to reuse it mo
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Usage](#Usage)
-- [Contributors](#Contributors)
+- [Usage](#usage)
+- [Contributors](#contributors)
 - [License](#license)
 
 ## Features
