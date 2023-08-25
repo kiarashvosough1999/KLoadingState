@@ -50,7 +50,7 @@ dependencies: [
 ```
 ## Usage
 
-Simplfy loading async content with 4 states and show relatable views respectivly.
+Simplfy loading async content with 4 states and show relatable views respectively.
 
 1. loaded(T)
 2. failedToLoad(message: String)
